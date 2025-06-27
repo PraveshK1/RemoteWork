@@ -1,0 +1,6 @@
+@WebapiScaffold_HostAddress = http://localhost:5193
+
+GET {{WebapiScaffold_HostAddress}}/user/
+Accept: application/json
+
+###
