@@ -3,19 +3,17 @@ using RemoteWorker.Services.Abstract;
 
 namespace RemoteWorker.Controllers
 {
-    public class UserController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController(IUserService service, ILogger<UserController> logger) : Controller
     {
-        private IUserService _userService;
-        public UserController(IUserService userService)
-        {
-            _userService = userService ?? throw new ArgumentNullException(nameof(userService));
-        }
+        private IUserService _service = service;
+        private ILogger<UserController> _logger = logger;
 
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetUser(string id)
+        [HttpGet]
+        public async Task<IActionResult> GetUser(Guid id)
         {
-            var user = await _userService.GetUserByIdAsync(id);
+            var user = await _service.GetUserByIdAsync(id);
             return user != null ? Ok(user) : NotFound();
         }
 

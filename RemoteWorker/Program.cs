@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RemoteWorker.Data;
 using RemoteWorker.Extensions;
+using RemoteWorker.Models;
 using RemoteWorker.Repositories.Abstract;
 using RemoteWorker.Repositories.Concrete;
 using RemoteWorker.Services.Abstract;
@@ -18,13 +19,18 @@ builder.Services.AddSwaggerGen();
 
 //Register Interfaces and Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped(typeof(IRemoteWorkerRepository<>), typeof(RemoteWorkerRepository<>));
+
+//Register Services
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+
 
 //Register DbContext before building app
-builder.Services.AddDbContext<UserDbContext>(options => options.
+builder.Services.AddDbContext<RemoteWorkerDbContext>(options => options.
 UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

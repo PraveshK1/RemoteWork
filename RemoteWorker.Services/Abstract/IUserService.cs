@@ -4,6 +4,6 @@ namespace RemoteWorker.Services.Abstract
 {
     public interface IUserService
     {
-        Task<UserDTO?> GetUserByIdAsync(string id);
+        Task<UserDto?> GetUserByIdAsync(Guid id);
     }
 }

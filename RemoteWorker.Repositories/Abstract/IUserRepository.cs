@@ -1,10 +1,12 @@
-﻿using RemoteWorker.Data;
-using RemoteWorker.Models;
+﻿using RemoteWorker.Models;
 
 namespace RemoteWorker.Repositories.Abstract
 {
     public interface IUserRepository
     {
-        Task<UserModel> GetByIdAsync(string id);
+        Task<UserModel> GetUserByIdAsync(Guid id);
+        Task<UserModel> GetUserByEmailAsync(string email);
+        Task<Guid> AddUser(UserModel user);
+
     }
 }
