@@ -10,7 +10,7 @@ namespace RemoteWorker.Controllers
         private IUserService _service = service;
         private ILogger<UserController> _logger = logger;
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetUser(Guid id)
         {
             var user = await _service.GetUserByIdAsync(id);

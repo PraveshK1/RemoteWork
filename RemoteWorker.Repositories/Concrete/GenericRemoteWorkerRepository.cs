@@ -7,11 +7,11 @@ using System.Linq.Expressions;
 
 namespace RemoteWorker.Repositories.Concrete
 {
-    public class RemoteWorkerRepository<T>(RemoteWorkerDbContext context, ILogger<RemoteWorkerRepository<T>> logger) : IRemoteWorkerRepository<T> where T : class
+    public class GenericRemoteWorkerRepository<T>(RemoteWorkerDbContext context, ILogger<GenericRemoteWorkerRepository<T>> logger) : IGenericRemoteWorkerRepository<T> where T : class
     {
         private readonly RemoteWorkerDbContext _context = context;
         private readonly DbSet<T> _dbSet = context.Set<T>();
-        private readonly ILogger<RemoteWorkerRepository<T>> _logger = logger;
+        private readonly ILogger<GenericRemoteWorkerRepository<T>> _logger = logger;
 
         public async Task AddAsync(T entity) => await _dbSet.AddAsync(entity);
 

@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace RemoteWorker.Repositories.Abstract
 {
-    public interface IRemoteWorkerRepository<T> where T : class
+    public interface IGenericRemoteWorkerRepository<T> where T : class
     {
         Task<T> GetByIdAsync(object id);
         Task<IEnumerable<T>> GetAllAsync();

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteWorker.Repositories",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteWorker.Services", "RemoteWorker.Services\RemoteWorker.Services.csproj", "{20004362-1DBA-88A5-4184-C2F941F56DD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteWorker.Mappings", "Remoteworker.Mappings\RemoteWorker.Mappings.csproj", "{7A5B43C8-91CE-458A-9E5A-BA1033B31250}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{20004362-1DBA-88A5-4184-C2F941F56DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20004362-1DBA-88A5-4184-C2F941F56DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20004362-1DBA-88A5-4184-C2F941F56DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A5B43C8-91CE-458A-9E5A-BA1033B31250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A5B43C8-91CE-458A-9E5A-BA1033B31250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A5B43C8-91CE-458A-9E5A-BA1033B31250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A5B43C8-91CE-458A-9E5A-BA1033B31250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

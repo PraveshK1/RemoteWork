@@ -10,14 +10,20 @@ namespace RemoteWorker.Controllers
         private readonly IProjectService _service = service;
         private readonly ILogger<ProjectController> _logger = logger;
 
-        [HttpGet]
-        public async Task<IActionResult> GetProjectById(Guid Id)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProjectById(Guid id)
         {
-            _logger.LogInformation("Fetching project with ID: {Id}", Id);
-            var project = await _service.GetProjectById(Id);
+            _logger.LogInformation("Fetching project with ID: {id}", id);
+            var project = await _service.GetProjectById(id);
             return project != null ? Ok(project) : NotFound();
-  
         }
 
+        [HttpGet("WithOwners/{projectId}")]
+        public async Task<IActionResult> GetProjectWithOwnersAsync(Guid projectId)
+        {
+            _logger.LogInformation("Fetching project with owners for project ID: {ProjectId}", projectId);
+            var projectsWithOwners = await _service.GetProjectWithOwnersAsync(projectId);
+            return Ok(projectsWithOwners);
+        }
     }
 }

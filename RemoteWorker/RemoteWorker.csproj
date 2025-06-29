@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
@@ -15,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RemoteWorker.Data\RemoteWorker.Data.csproj" />
     <ProjectReference Include="..\RemoteWorker.Extensions\RemoteWorker.Extensions.csproj" />
+    <ProjectReference Include="..\Remoteworker.Mappings\RemoteWorker.Mappings.csproj" />
     <ProjectReference Include="..\RemoteWorker.Repositories\RemoteWorker.Repositories.csproj" />
     <ProjectReference Include="..\RemoteWorker.Services\RemoteWorker.Services.csproj" />
   </ItemGroup>

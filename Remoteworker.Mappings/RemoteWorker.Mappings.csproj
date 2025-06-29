@@ -12,8 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RemoteWorker.DTOs\RemoteWorker.DTOs.csproj" />
-    <ProjectReference Include="..\Remoteworker.Mappings\RemoteWorker.Mappings.csproj" />
-    <ProjectReference Include="..\RemoteWorker.Repositories\RemoteWorker.Repositories.csproj" />
+    <ProjectReference Include="..\RemoteWorker.Models\RemoteWorker.Models.csproj" />
   </ItemGroup>
 
 </Project>

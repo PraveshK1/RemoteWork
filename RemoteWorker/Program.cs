@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using RemoteWorker.Data;
 using RemoteWorker.Extensions;
-using RemoteWorker.Models;
 using RemoteWorker.Repositories.Abstract;
 using RemoteWorker.Repositories.Concrete;
 using RemoteWorker.Services.Abstract;
 using RemoteWorker.Services.Concrete;
+using RemoteWorker.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +17,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Register AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 //Register Interfaces and Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped(typeof(IRemoteWorkerRepository<>), typeof(RemoteWorkerRepository<>));
+builder.Services.AddScoped(typeof(IGenericRemoteWorkerRepository<>), typeof(GenericRemoteWorkerRepository<>));
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
 //Register Services
 builder.Services.AddScoped<IUserService, UserService>();
